@@ -1,0 +1,1 @@
+!function(){"use strict";const e=document.querySelector(".header__burger"),c=document.querySelector(".header__nav");e.onclick=function(){c.classList.toggle("header__nav--close"),c.classList.toggle("header__nav--open")}}();
