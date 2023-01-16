@@ -35,7 +35,7 @@ module.exports = {
             use: [MiniCssExtractPlugin.loader, 'css-loader', {
               loader: 'sass-loader',
               options: {
-                additionalData: '@import "./sass/global/vars.scss";',
+                additionalData: '@import "./sass/global/vars.scss";@import "./sass/global/mixins.scss";',
                 implementation: require("sass"),
               },
             },
@@ -57,7 +57,21 @@ module.exports = {
             new CssMinimizerPlugin(),
         ],
     },
-    plugins: [new HtmlWebpackPlugin({
+    plugins: [
+      new HtmlWebpackPlugin({
       template: './index.html'
-    }), new MiniCssExtractPlugin()],
+    }),
+      new HtmlWebpackPlugin({
+        filename: "top.html",
+        template: './top.html'
+      }),
+      new HtmlWebpackPlugin({
+        filename: "aboutMe.html",
+        template: './aboutMe.html'
+      }),
+      new HtmlWebpackPlugin({
+        filename: "donation.html",
+        template: './donation.html'
+      }),
+      new MiniCssExtractPlugin()],
 };
