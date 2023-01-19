@@ -4,6 +4,9 @@ import "../sass/blocks/content.scss";
 import "../sass/blocks/btn.scss";
 import "../sass/blocks/footer.scss";
 import "../sass/blocks/image.scss";
+import "../sass/blocks/slider.scss";
+import "../sass/blocks/arrow.scss";
+import "../sass/blocks/position.scss";
 import "../sass/global/main.scss";
 
 

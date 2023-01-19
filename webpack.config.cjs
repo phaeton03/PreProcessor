@@ -4,7 +4,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
-    entry: { main: './js/main.mjs' },
+    entry: {
+      main: './js/main.mjs',
+      slider: './js/slider.mjs'
+    },
     output: {
         /** название моей текущей директории плюс dist */
         path: resolve(__dirname, 'dist'),
