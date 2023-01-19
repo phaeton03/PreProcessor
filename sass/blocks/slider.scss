@@ -40,3 +40,11 @@
     transform:scale(0.8,0.8);
   }
 }
+
+.slider__nav--open {
+  display: block;
+}
+
+.slider__nav--close {
+  display: none;
+}

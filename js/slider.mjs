@@ -1,35 +1,48 @@
-const arrows = document.querySelectorAll(".slider__arrow__btn");
-const leftArrow = arrows[0];
-const rightArrow = arrows[1];
-const menu = document.querySelector(".slider__list");
-const liElements = Array.from(menu.children);
-
 let currentArrowLiElement = 0;
 
-rightArrow.onclick = function(domElement) {
+const slider = document.querySelectorAll(".slider");
+slider.forEach((domElement) => Slider(domElement));
+
+function Slider(domElement) {
   if (!(domElement instanceof HTMLElement)) {
     throw new Error("domElement is not HTML");
   }
 
-  liElements.at(currentArrowLiElement).classList.toggle("header__nav--open");
-  liElements.at(currentArrowLiElement).classList.toggle("header__nav--close");
+  const arrows = domElement.querySelectorAll(".slider__arrow__btn");
+  const leftArrow = arrows[0];
+  const rightArrow = arrows[1];
+  const menu = domElement.querySelector(".slider__list");
+  const liElements = Array.from(menu.children);
+
+  leftArrow.onclick = function () {
+    slideLeft(liElements);
+  };
+
+  rightArrow.onclick = function () {
+    slideRight(liElements)
+  };
+}
+
+function slideRight(liElements) {
+  liElements.at(currentArrowLiElement).classList.toggle("slider__nav--open");
+  liElements.at(currentArrowLiElement).classList.toggle("slider__nav--close");
 
   currentArrowLiElement++;
   currentArrowLiElement = currentArrowLiElement % liElements.length;
 
-  liElements.at(currentArrowLiElement).classList.toggle("header__nav--close");
-  liElements.at(currentArrowLiElement).classList.toggle("header__nav--open");
-};
+  liElements.at(currentArrowLiElement).classList.toggle("slider__nav--close");
+  liElements.at(currentArrowLiElement).classList.toggle("slider__nav--open");
+}
 
-leftArrow.onclick = function() {
-  liElements.at(currentArrowLiElement).classList.toggle("header__nav--open");
-  liElements.at(currentArrowLiElement).classList.toggle("header__nav--close");
+function slideLeft(liElements) {
+  liElements.at(currentArrowLiElement).classList.toggle("slider__nav--open");
+  liElements.at(currentArrowLiElement).classList.toggle("slider__nav--close");
 
   currentArrowLiElement--;
   currentArrowLiElement = currentArrowLiElement % liElements.length;
 
-  liElements.at(currentArrowLiElement).classList.toggle("header__nav--close");
-  liElements.at(currentArrowLiElement).classList.toggle("header__nav--open");
-};
+  liElements.at(currentArrowLiElement).classList.toggle("slider__nav--close");
+  liElements.at(currentArrowLiElement).classList.toggle("slider__nav--open");
+}
 
 
