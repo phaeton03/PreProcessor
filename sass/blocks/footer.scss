@@ -1,0 +1,11 @@
+.footer {
+  @include uppertext();
+  background: black;
+  position: fixed;
+  bottom: 0;
+  color: #ebebeb;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  padding-left: 10px;
+}
