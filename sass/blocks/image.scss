@@ -1,0 +1,5 @@
+.image {
+  float: left;
+  margin: 10px;
+  @include image();
+}

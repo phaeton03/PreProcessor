@@ -1,0 +1,11 @@
+.position__left {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  justify-self: left;
+}
+
+.position__right {
+  grid-row-start: 1;
+  grid-column-end: -1;
+  justify-self: right;
+}
